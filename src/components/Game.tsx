@@ -7,8 +7,8 @@ import React, {
   useState,
 } from "react";
 import { toast } from "react-toastify";
-import { getCountryName, sanitizeCountryName } from "../domain/countries";
-import { CountryInput } from "./CountryInput";
+import { getLakeName, sanitizeLakeName } from "../domain/lakes";
+import { LakeInput } from "./LakeInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
 import { Guesses } from "./Guesses";
@@ -17,7 +17,7 @@ import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import { countries } from "../domain/countries.position";
+import { lakes } from "../domain/lakes.position";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
 const ENABLE_TWITCH_LINK = false;
@@ -37,13 +37,13 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   useNewsNotifications(dayString);
 
-  const countryInputRef = useRef<HTMLInputElement>(null);
+  const lakeInputRef = useRef<HTMLInputElement>(null);
 
   const [todays, addGuess, randomAngle, imageScale] = useTodays(dayString);
-  const { country, guesses } = todays;
-  const countryName = useMemo(
-    () => (country ? getCountryName(i18n.resolvedLanguage, country) : ""),
-    [country, i18n.resolvedLanguage]
+  const { lake, guesses } = todays;
+  const lakeName = useMemo(
+    () => (lake ? getLakeName(i18n.resolvedLanguage, lake) : ""),
+    [lake, i18n.resolvedLanguage]
   );
 
   const [currentGuess, setCurrentGuess] = useState("");
@@ -64,28 +64,27 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
-      if (country == null) {
+      if (lake == null) {
         return;
       }
       e.preventDefault();
-      const guessedCountry = countries.find(
-        (country) =>
-          sanitizeCountryName(
-            getCountryName(i18n.resolvedLanguage, country)
-          ) === sanitizeCountryName(currentGuess)
+      const guessedLake = lakes.find(
+        (lake) =>
+          sanitizeLakeName(getLakeName(i18n.resolvedLanguage, lake)) ===
+          sanitizeLakeName(currentGuess)
       );
 
-      if (guessedCountry == null) {
-        toast.error(t("unknownCountry"));
+      if (guessedLake == null) {
+        toast.error(t("unknownLake"));
         return;
       }
 
       const newGuess = {
         name: currentGuess,
-        distance: geolib.getDistance(guessedCountry, country),
+        distance: geolib.getDistance(guessedLake, lake),
         direction: geolib.getCompassDirection(
-          guessedCountry,
-          country,
+          guessedLake,
+          lake,
           (origin, dest) =>
             Math.round(geolib.getRhumbLineBearing(origin, dest) / 45) * 45
         ),
@@ -98,19 +97,19 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         toast.success(t("welldone"), { delay: 2000 });
       }
     },
-    [addGuess, country, currentGuess, i18n.resolvedLanguage, t]
+    [addGuess, lake, currentGuess, i18n.resolvedLanguage, t]
   );
 
   useEffect(() => {
     let toastId: ReactText;
-    const { country, guesses } = todays;
+    const { lake, guesses } = todays;
     if (
-      country &&
+      lake &&
       guesses.length === MAX_TRY_COUNT &&
       guesses[guesses.length - 1].distance > 0
     ) {
       toastId = toast.info(
-        getCountryName(i18n.resolvedLanguage, country).toUpperCase(),
+        getLakeName(i18n.resolvedLanguage, lake).toUpperCase(),
         {
           autoClose: false,
           delay: 2000,
@@ -134,7 +133,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           onClick={() => setHideImageMode(false)}
         >
           <Twemoji
-            text={t("showCountry")}
+            text={t("showLake")}
             options={{ className: "inline-block" }}
           />
         </button>
@@ -156,8 +155,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in dark:invert ${
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
-          alt="country to guess"
-          src={`images/countries/${country?.code.toLowerCase()}/vector.svg`}
+          alt="lake to guess"
+          src={`images/lakes/${lake?.code.toLowerCase()}/vector.svg`}
           style={
             rotationMode && !gameEnded
               ? {
@@ -192,14 +191,14 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         </button>
       )}
       <Guesses
-        targetCountry={country}
+        targetLake={lake}
         rowCount={MAX_TRY_COUNT}
         guesses={guesses}
         settingsData={settingsData}
-        countryInputRef={countryInputRef}
+        lakeInputRef={lakeInputRef}
       />
       <div className="my-2">
-        {gameEnded && country ? (
+        {gameEnded && lake ? (
           <>
             <Share
               guesses={guesses}
@@ -211,7 +210,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
-                href={`https://www.google.com/maps?q=${countryName}+${country.code.toUpperCase()}&hl=${
+                href={`https://www.google.com/maps?q=${lakeName}+${lake.code.toUpperCase()}&hl=${
                   i18n.resolvedLanguage
                 }`}
                 target="_blank"
@@ -224,7 +223,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               </a>
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
-                href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${countryName}`}
+                href={`https://${i18n.resolvedLanguage}.wikipedia.org/wiki/${lakeName}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -249,29 +248,12 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 </a>
               </div>
             )}
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                className="underline text-center block mt-4 whitespace-nowrap"
-                href="https://emovi.teuteuf.fr/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twemoji
-                  text={
-                    dayString === "2022-07-17"
-                      ? "Let's celebrate #WorldEmojiDay! Play Emovi! 🎥"
-                      : "Try my new game, play Emovi! 🎥"
-                  }
-                  options={{ className: "inline-block" }}
-                />
-              </a>
-            </div>
           </>
         ) : (
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col">
-              <CountryInput
-                inputRef={countryInputRef}
+              <LakeInput
+                inputRef={lakeInputRef}
                 currentGuess={currentGuess}
                 setCurrentGuess={setCurrentGuess}
               />

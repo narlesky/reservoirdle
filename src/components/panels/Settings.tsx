@@ -66,26 +66,6 @@ export function Settings({
             {t("settings.theme")}
           </label>
         </div>
-        <div className="flex p-1">
-          <select
-            id="setting-language"
-            className="h-8 dark:bg-slate-800 w-16 p-1"
-            value={i18n.language}
-            onChange={(e) => i18n.changeLanguage(e.target.value)}
-          >
-            {Object.keys(translations).map((language) => (
-              <option key={language} value={language}>
-                {language.toUpperCase()}
-              </option>
-            ))}
-          </select>
-          <label
-            className="flex-1 ml-2 flex items-center"
-            htmlFor="setting-language"
-          >
-            {t("settings.language")}
-          </label>
-        </div>
       </div>
       <div className="my-4 flex flex-col gap-2">
         <header className="my-2">

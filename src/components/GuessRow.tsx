@@ -9,50 +9,46 @@ import React, { useCallback, useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { SettingsData } from "../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import {
-  Country,
-  getCountryName,
-  sanitizeCountryName,
-} from "../domain/countries";
-import { areas } from "../domain/countries.area";
-import { countries } from "../domain/countries.position";
+import { Lake, getLakeName, sanitizeLakeName } from "../domain/lakes";
+import { areas } from "../domain/lakes.area";
+import { lakes } from "../domain/lakes.position";
 import { useTranslation } from "react-i18next";
 
 const SQUARE_ANIMATION_LENGTH = 250;
 type AnimationState = "NOT_STARTED" | "RUNNING" | "ENDED";
 
 interface GuessRowProps {
-  targetCountry?: Country;
+  targetLake?: Lake;
   guess?: Guess;
   settingsData: SettingsData;
-  countryInputRef?: React.RefObject<HTMLInputElement>;
+  lakeInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 export function GuessRow({
-  targetCountry,
+  targetLake,
   guess,
   settingsData,
-  countryInputRef,
+  lakeInputRef,
 }: GuessRowProps) {
   const { i18n } = useTranslation();
   const { distanceUnit, theme } = settingsData;
   const proximity = guess != null ? computeProximityPercent(guess.distance) : 0;
   const squares = generateSquareCharacters(proximity, theme);
 
-  const guessedCountry =
+  const guessedLake =
     guess &&
-    countries.find(
-      (country) =>
-        sanitizeCountryName(getCountryName(i18n.resolvedLanguage, country)) ===
-        sanitizeCountryName(guess.name)
+    lakes.find(
+      (lake) =>
+        sanitizeLakeName(getLakeName(i18n.resolvedLanguage, lake)) ===
+        sanitizeLakeName(guess.name)
     );
 
   const sizePercent =
-    targetCountry &&
-    guessedCountry &&
+    targetLake &&
+    guessedLake &&
     Math.min(
       999,
-      Math.round((areas[targetCountry.code] / areas[guessedCountry.code]) * 100)
+      Math.round((areas[targetLake.code] / areas[guessedLake.code]) * 100)
     );
 
   const percentToDisplay =
@@ -79,10 +75,10 @@ export function GuessRow({
   }, [guess]);
 
   const handleClickOnEmptyRow = useCallback(() => {
-    if (countryInputRef?.current != null) {
-      countryInputRef?.current.focus();
+    if (lakeInputRef?.current != null) {
+      lakeInputRef?.current.focus();
     }
-  }, [countryInputRef]);
+  }, [lakeInputRef]);
 
   switch (animationState) {
     case "NOT_STARTED":

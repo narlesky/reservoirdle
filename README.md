@@ -1,11 +1,6 @@
-# WOR**L**DLE
+# **RESERVOIR**DLE
 
-Play this geographical wordle here: https://worldle.teuteuf.fr !
-
-## Suggestions and feedback
-
-To centralize all suggestions and feedback, please use this form: [Google Form](https://docs.google.com/forms/d/1Y8ZlIuBs6nIlmO6M4N80MO9q9lJIk6khNFSy4KTuecs/)!  
-You can also send an email to contact@teuteuf.fr.
+Play here: https://reservoirdle.mbkapps.com !
 
 ## Contributions & PR
 
@@ -19,3 +14,7 @@ Contributions are not open! Open PR won't be merged.
 - Country images => https://github.com/djaiss/mapsicon
 - Fixed images => http://www.amcharts.com/svg-maps/ & Wikipedia
 - Emojis & World icon => https://github.com/twitter/twemoji
+
+
+## Adapted from WOR**L**DLE
+https://reservoirdle.teuteuf.fr
