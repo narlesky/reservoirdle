@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/reservoirdle.github.io/static/css/main.417ccd95.css",
-    "main.js": "/reservoirdle.github.io/static/js/main.ab7cbfb7.js",
-    "static/js/787.6cf26086.chunk.js": "/reservoirdle.github.io/static/js/787.6cf26086.chunk.js",
-    "service-worker.js": "/reservoirdle.github.io/service-worker.js",
-    "index.html": "/reservoirdle.github.io/index.html",
-    "main.417ccd95.css.map": "/reservoirdle.github.io/static/css/main.417ccd95.css.map",
-    "main.ab7cbfb7.js.map": "/reservoirdle.github.io/static/js/main.ab7cbfb7.js.map",
-    "787.6cf26086.chunk.js.map": "/reservoirdle.github.io/static/js/787.6cf26086.chunk.js.map"
+    "main.css": "/reservoirdle/static/css/main.417ccd95.css",
+    "main.js": "/reservoirdle/static/js/main.80f5ff1e.js",
+    "static/js/787.6cf26086.chunk.js": "/reservoirdle/static/js/787.6cf26086.chunk.js",
+    "service-worker.js": "/reservoirdle/service-worker.js",
+    "index.html": "/reservoirdle/index.html",
+    "main.417ccd95.css.map": "/reservoirdle/static/css/main.417ccd95.css.map",
+    "main.80f5ff1e.js.map": "/reservoirdle/static/js/main.80f5ff1e.js.map",
+    "787.6cf26086.chunk.js.map": "/reservoirdle/static/js/787.6cf26086.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.417ccd95.css",
-    "static/js/main.ab7cbfb7.js"
+    "static/js/main.80f5ff1e.js"
   ]
 }
