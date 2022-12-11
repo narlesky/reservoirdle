@@ -101,6 +101,22 @@ export default function App() {
             </button>
           </header>
           <Game settingsData={settingsData} updateSettings={updateSettings} />
+          <div className="flex justify-center m-6">
+            <div className="flex flex-col m-2">
+              <p className="text-sm text-center">
+                National Hydrography Dataset:{" "}
+                <a
+                  className="underline pl-1"
+                  href="https://data.cnra.ca.gov/dataset/national-hydrography-dataset-nhd/resource/ec84510b-2cd3-41c1-9f3e-849209582a72?inner_span=True"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  California Lakes and Reservoirs
+                </a>{" "}
+              </p>
+            </div>
+          </div>
+
           <footer className="flex justify-center items-center mt-8 mb-4">
             <Twemoji
               text="❤️"
