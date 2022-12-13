@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/reservoirdle/static/css/main.dde07f01.css",
-    "main.js": "/reservoirdle/static/js/main.12cc5b82.js",
+    "main.js": "/reservoirdle/static/js/main.69ee11eb.js",
     "static/js/787.6cf26086.chunk.js": "/reservoirdle/static/js/787.6cf26086.chunk.js",
     "service-worker.js": "/reservoirdle/service-worker.js",
     "index.html": "/reservoirdle/index.html",
     "main.dde07f01.css.map": "/reservoirdle/static/css/main.dde07f01.css.map",
-    "main.12cc5b82.js.map": "/reservoirdle/static/js/main.12cc5b82.js.map",
+    "main.69ee11eb.js.map": "/reservoirdle/static/js/main.69ee11eb.js.map",
     "787.6cf26086.chunk.js.map": "/reservoirdle/static/js/787.6cf26086.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dde07f01.css",
-    "static/js/main.12cc5b82.js"
+    "static/js/main.69ee11eb.js"
   ]
 }
