@@ -60,7 +60,9 @@ export function Share({
       })
       .join("\n");
 
-    return [title, guessString, "https://reservoirdle.teuteuf.fr"].join("\n");
+    return [title, guessString, "https://narlesky.github.io/reservoirdle"].join(
+      "\n"
+    );
   }, [dayString, guesses, hideImageMode, rotationMode, theme]);
 
   return (
