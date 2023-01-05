@@ -1,10 +1,5 @@
 import { areas } from "./lakes.area";
 import { lakes } from "./lakes.position";
-// import { corsicanLakeNames } from "./lakes.name.co";
-// import { frenchLakeNames } from "./lakes.name.fr";
-// import { hungarianLakeNames } from "./lakes.name.hu";
-// import { dutchLakeNames } from "./lakes.name.nl";
-// import { polishLakeNames } from "./lakes.name.pl";
 
 import { lakeCodesWithImage } from "./lakes.image";
 
@@ -26,20 +21,6 @@ export const bigEnoughCountriesWithImage = lakesWithImage.filter(
 
 export function getLakeName(language: string, lake: Lake) {
   switch (language) {
-    // case "co":
-    //   return corsicanLakeNames[lake.code];
-    // case "fr":
-    //   return frenchLakeNames[lake.code];
-    // case "hu":
-    //   return hungarianLakeNames[lake.code];
-    // case "nl":
-    //   return dutchLakeNames[lake.code];
-    // case "pl":
-    //   return polishLakeNames[lake.code];
-    // case "de":
-    //   return germanLakeNames[lake.code];
-    // case "ja":
-    //   return japaneseLakeNames[lake.code];
     default:
       return lake.name;
   }
