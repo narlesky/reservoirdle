@@ -4,7 +4,7 @@ import React from "react";
 import { Reservoirdle } from "../Reservoirdle";
 import { formatDistance } from "../../domain/geography";
 import { SettingsData } from "../../hooks/useSettings";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { Twemoji } from "react-emoji-render";
 
 interface InfosProps {
   isOpen: boolean;

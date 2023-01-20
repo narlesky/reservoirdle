@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { Twemoji } from "react-emoji-render";
 import { lakes } from "../domain/lakes.position";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
@@ -132,10 +132,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           type="button"
           onClick={() => setHideImageMode(false)}
         >
-          <Twemoji
-            text={t("showLake")}
-            options={{ className: "inline-block" }}
-          />
+          <Twemoji text="showLake" className="inline-block" />
         </button>
       )}
       <div className="flex my-1">
@@ -184,10 +181,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           type="button"
           onClick={() => setRotationMode(false)}
         >
-          <Twemoji
-            text={t("cancelRotation")}
-            options={{ className: "inline-block" }}
-          />
+          <Twemoji text="cancelRotation" className="inline-block" />
         </button>
       )}
       <Guesses
@@ -216,10 +210,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twemoji
-                  text={t("showOnGoogleMaps")}
-                  options={{ className: "inline-block" }}
-                />
+                <Twemoji text="showOnGoogleMaps" className="inline-block" />
               </a>
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
@@ -227,27 +218,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twemoji
-                  text={t("showOnWikipedia")}
-                  options={{ className: "inline-block" }}
-                />
+                <Twemoji text="showOnWikipedia" className="inline-block" />
               </a>
             </div>
-            {ENABLE_TWITCH_LINK && (
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a
-                  className="underline text-center block mt-4 whitespace-nowrap"
-                  href="https://www.twitch.tv/t3uteuf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twemoji
-                    text="More? Play on Twitch! 👾"
-                    options={{ className: "inline-block" }}
-                  />
-                </a>
-              </div>
-            )}
           </>
         ) : (
           <form onSubmit={handleSubmit}>
@@ -263,8 +236,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
               >
                 <Twemoji
                   text="🌍"
-                  options={{ className: "inline-block" }}
-                  className="flex items-center justify-center"
+                  className="inline-block flex items-center justify-center"
                 />{" "}
                 <span className="ml-1">{t("guess")}</span>
               </button>

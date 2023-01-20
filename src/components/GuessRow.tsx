@@ -8,7 +8,7 @@ import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { SettingsData } from "../hooks/useSettings";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { Twemoji } from "react-emoji-render";
 import { Lake, getLakeName, sanitizeLakeName } from "../domain/lakes";
 import { areas } from "../domain/lakes.area";
 import { lakes } from "../domain/lakes.position";

@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import React, { useEffect, useState } from "react";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { Twemoji } from "react-emoji-render";
 
 interface PanelProps {
   title: string;
