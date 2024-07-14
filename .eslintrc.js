@@ -9,7 +9,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
+    // "prettier",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -19,10 +19,10 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "prettier"],
+  plugins: ["react", "@typescript-eslint"], //, "prettier"],
   rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
-    "prettier/prettier": "error",
+    // "prettier/prettier": "error",
   },
 };

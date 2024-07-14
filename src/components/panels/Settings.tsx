@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SettingsData } from "../../hooks/useSettings";
-import { translations } from "../../i18n";
 import { Panel } from "./Panel";
 
 interface SettingsProps {

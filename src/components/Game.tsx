@@ -20,8 +20,7 @@ import { Twemoji } from "react-emoji-render";
 import { lakes } from "../domain/lakes.position";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
-const ENABLE_TWITCH_LINK = false;
-const MAX_TRY_COUNT = 6;
+const MAX_TRY_COUNT = 8;
 
 interface GameProps {
   settingsData: SettingsData;
@@ -210,7 +209,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twemoji text="showOnGoogleMaps" className="inline-block" />
+                <Twemoji text="👀 Google Maps" className="inline-block" />
               </a>
               <a
                 className="underline text-center block mt-4 whitespace-nowrap"
@@ -218,7 +217,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twemoji text="showOnWikipedia" className="inline-block" />
+                <Twemoji text="📚 Wikipedia" className="inline-block" />
               </a>
             </div>
           </>

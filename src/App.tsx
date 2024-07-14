@@ -23,7 +23,7 @@ const supportLink: Record<string, string> = {
 };
 
 export default function App() {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
 
   const dayString = useMemo(getDayString, []);
   const [{ lake }] = useTodays(dayString);
@@ -130,7 +130,7 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="w-max">{t(`support.${lake.code}`)}</div>
+                <div className="w-max">{`support.${lake.code}`}</div>
               </a>
             ) : (
               <a

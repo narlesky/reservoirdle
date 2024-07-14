@@ -17,7 +17,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
     <Panel title="How to play" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Guess the <Reservoirdle /> in 6 guesses.
+          Guess the <Reservoirdle /> in 8 guesses.
         </div>
         <div>Each guess must be a valid reservoir/lake name{"."}</div>
         <div>
@@ -32,18 +32,18 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Chile",
-                direction: "NE",
-                distance: 13_557_000,
+                name: "LAKE HENSHAW",
+                direction: "NW",
+                distance: 734_000,
               },
             ]}
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your guess <span className="uppercase font-bold">Chile</span> is{" "}
-            {formatDistance(13557000, settingsData.distanceUnit)} away from the
-            target location, the target location is in the North-East direction
-            and you have a only 32% of proximity because it&apos;s quite far
+            Your guess <span className="uppercase font-bold">Lake Henshaw</span> is{" "}
+            {formatDistance(734000, settingsData.distanceUnit)} away from the
+            target location, the target location is in the North-West direction
+            and you have a only 58% of proximity because it&apos;s quite far
             away!
           </div>
         </div>
@@ -52,18 +52,18 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Finland",
-                direction: "SE",
-                distance: 3_206_000,
+                name: "CAMANCHE RESERVOIR",
+                direction: "NE",
+                distance: 109_000,
               },
             ]}
             settingsData={settingsData}
           />
           <div className="my-2">
             Your second guess{" "}
-            <span className="uppercase font-bold">Finland</span> is getting
-            closer! {formatDistance(3206000, settingsData.distanceUnit)} away,
-            South-East direction and 84%!
+            <span className="uppercase font-bold">Camanche Reservoir</span> is getting
+            closer! {formatDistance(109000, settingsData.distanceUnit)} away,
+            North-East direction and 93%!
           </div>
         </div>
         <div>
@@ -71,7 +71,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Lebanon",
+                name: "FRENCH MEADOWS RESERVIOR",
                 direction: "N",
                 distance: 0,
               },
@@ -79,8 +79,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Next guess, <span className="uppercase font-bold">Lebanon</span>,
-            it&apos;s the location to guess! Congrats!{" "}
+            Next guess, <span className="uppercase font-bold">French Meadows Reservior</span>,
+            is correct!{" "}
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
@@ -105,7 +105,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         >
           Josh Wardle (@powerlanguish)
         </a>
-        . Reservoirdle is adapted from the source code for{" "}
+        . Reservoirdle is <span className="font-bold">adapted from</span> the source code for{" "}
         <a
           className="underline"
           href="https://worldle.teuteuf.fr/"
