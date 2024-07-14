@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/reservoirdle/static/css/main.dde07f01.css",
-    "main.js": "/reservoirdle/static/js/main.d08a753b.js",
-    "static/js/787.6cf26086.chunk.js": "/reservoirdle/static/js/787.6cf26086.chunk.js",
+    "main.css": "/reservoirdle/static/css/main.99dbfa4f.css",
+    "main.js": "/reservoirdle/static/js/main.27d90553.js",
+    "static/js/453.ed92e33c.chunk.js": "/reservoirdle/static/js/453.ed92e33c.chunk.js",
     "service-worker.js": "/reservoirdle/service-worker.js",
     "index.html": "/reservoirdle/index.html",
-    "main.dde07f01.css.map": "/reservoirdle/static/css/main.dde07f01.css.map",
-    "main.d08a753b.js.map": "/reservoirdle/static/js/main.d08a753b.js.map",
-    "787.6cf26086.chunk.js.map": "/reservoirdle/static/js/787.6cf26086.chunk.js.map"
+    "main.99dbfa4f.css.map": "/reservoirdle/static/css/main.99dbfa4f.css.map",
+    "main.27d90553.js.map": "/reservoirdle/static/js/main.27d90553.js.map",
+    "453.ed92e33c.chunk.js.map": "/reservoirdle/static/js/453.ed92e33c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dde07f01.css",
-    "static/js/main.d08a753b.js"
+    "static/css/main.99dbfa4f.css",
+    "static/js/main.27d90553.js"
   ]
 }
