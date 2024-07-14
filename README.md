@@ -11,4 +11,4 @@ Play here: https://narlesky.github.io/reservoirdle !
 
 
 ## Adapted from WOR**L**DLE
-https://reservoirdle.teuteuf.fr
+https://worldle.teuteuf.fr
